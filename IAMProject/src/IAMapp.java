@@ -21,7 +21,7 @@ public class IAMapp extends JFrame {
         setLayout(new BorderLayout());
         getContentPane().setBackground(new Color(34, 40, 49));
 
-        // Header with icon and title
+      
         JPanel header = new JPanel(new FlowLayout(FlowLayout.LEFT));
         header.setBackground(new Color(34, 40, 49));
         JLabel iconLabel = new JLabel(new ImageIcon(createColoredCircle(40, new Color(100, 149, 237))));
@@ -34,7 +34,7 @@ public class IAMapp extends JFrame {
         header.setBorder(new EmptyBorder(10, 20, 10, 20));
         add(header, BorderLayout.NORTH);
 
-        // Input Panel with color & padding
+    
         JPanel inputPanel = new JPanel(new GridBagLayout());
         inputPanel.setBackground(new Color(45, 52, 54));
         inputPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
@@ -68,7 +68,7 @@ public class IAMapp extends JFrame {
         gbc.gridy = 1;
         inputPanel.add(roleField, gbc);
 
-        // Buttons with custom styles
+
         JButton addButton = new JButton("➕ Add User");
         styleButton(addButton, new Color(46, 204, 113));
         gbc.gridx = 0;
@@ -83,7 +83,7 @@ public class IAMapp extends JFrame {
 
         add(inputPanel, BorderLayout.CENTER);
 
-        // User display area
+
         userDisplayArea = new JTextArea();
         userDisplayArea.setEditable(false);
         userDisplayArea.setFont(new Font("Consolas", Font.PLAIN, 14));
@@ -96,7 +96,7 @@ public class IAMapp extends JFrame {
         add(new JScrollPane(userDisplayArea), BorderLayout.SOUTH);
         ((JScrollPane)getContentPane().getComponent(2)).setPreferredSize(new Dimension(700, 180));
 
-        // Button actions
+
         addButton.addActionListener(e -> {
             String username = usernameField.getText().trim();
             String role = roleField.getText().trim().toLowerCase();
@@ -169,7 +169,7 @@ public class IAMapp extends JFrame {
     }
 
     private Image createColoredCircle(int diameter, Color color) {
-        // Creates a simple colored circle image for the icon
+ 
         Image img = new BufferedImage(diameter, diameter, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2 = (Graphics2D) img.getGraphics();
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
